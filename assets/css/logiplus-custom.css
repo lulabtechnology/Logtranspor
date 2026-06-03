@@ -811,3 +811,157 @@ img{max-width:100%;height:auto;display:block}
     padding:14px;
   }
 }
+
+
+/* =========================================================
+   V6 MOBILE FIX + SEO SAFE
+   Corrige tarjetas de servicios en celular/tablet para que
+   nunca queden en 3 columnas estrechas ni partan palabras.
+   Mantiene los textos SEO del Word: seguro de carga Panamá,
+   importaciones USA, China LCL, casillero Miami, etc.
+   ========================================================= */
+
+html, body{
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+/* Evita títulos partidos en letras cuando una tarjeta queda angosta */
+.service-card,
+.service-card *{
+  word-break:normal!important;
+  overflow-wrap:normal!important;
+  hyphens:none!important;
+}
+
+.service-content h3{
+  line-height:1.12;
+}
+
+@media(max-width:1000px){
+  .services-section{
+    padding-top:72px!important;
+    padding-bottom:104px!important;
+  }
+
+  .service-grid.service-grid-extended,
+  .service-grid-extended{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:22px!important;
+    width:100%!important;
+  }
+
+  .service-card{
+    width:100%!important;
+    max-width:560px!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    border-radius:28px!important;
+    overflow:hidden!important;
+    min-width:0!important;
+  }
+
+  .service-thumb{
+    width:100%!important;
+    height:220px!important;
+    min-height:220px!important;
+    background-size:cover!important;
+    background-position:center!important;
+  }
+
+  .service-content{
+    padding:24px!important;
+  }
+
+  .service-content span{
+    width:54px!important;
+    height:54px!important;
+    border-radius:18px!important;
+    font-size:18px!important;
+  }
+
+  .service-content h3{
+    min-height:0!important;
+    font-size:27px!important;
+    line-height:1.12!important;
+    margin:18px 0 10px!important;
+    white-space:normal!important;
+  }
+
+  .service-content p{
+    font-size:16px!important;
+    line-height:1.7!important;
+    white-space:normal!important;
+  }
+
+  .service-content a{
+    margin-top:18px!important;
+    display:inline-flex!important;
+    line-height:1.3!important;
+    white-space:normal!important;
+  }
+}
+
+@media(max-width:520px){
+  body{
+    padding-bottom:84px;
+  }
+
+  .services-section .section-heading{
+    margin-bottom:28px!important;
+  }
+
+  .services-section .section-heading h2{
+    font-size:30px!important;
+    line-height:1.08!important;
+  }
+
+  .services-section .section-heading p{
+    font-size:15.5px!important;
+    line-height:1.65!important;
+  }
+
+  .service-card{
+    max-width:100%!important;
+    border-radius:26px!important;
+  }
+
+  .service-thumb{
+    height:205px!important;
+    min-height:205px!important;
+  }
+
+  .service-content{
+    padding:22px!important;
+  }
+
+  .service-content h3{
+    font-size:26px!important;
+  }
+
+  .mobile-quick{
+    left:12px!important;
+    right:12px!important;
+    bottom:10px!important;
+    border-radius:22px!important;
+  }
+
+  .whatsapp-float{
+    bottom:92px!important;
+    right:18px!important;
+  }
+}
+
+@media(max-width:380px){
+  .service-thumb{
+    height:188px!important;
+    min-height:188px!important;
+  }
+  .service-content h3{
+    font-size:24px!important;
+  }
+  .service-content p{
+    font-size:15px!important;
+  }
+}

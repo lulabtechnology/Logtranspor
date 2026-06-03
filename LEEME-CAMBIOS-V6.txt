@@ -1,0 +1,28 @@
+CAMBIOS V6 - LOGIPLUS MOBILE + SEO
+
+Archivos modificados:
+- index.html
+- assets/css/logiplus-custom.css
+
+Qué se corrigió:
+1. Se arregló la sección de Servicios en celular.
+   Antes las cards quedaban en 3 columnas estrechas y los títulos se partían letra por letra.
+   Ahora en móvil/tablet se muestran en una sola columna, con imagen completa arriba, título legible y texto visible.
+
+2. Se agregó una regla robusta hasta 1000px para evitar que Chrome móvil o pantallas pequeñas rendericen las cards como desktop.
+
+3. Se ajustó el espacio inferior para que el menú móvil fijo y el botón de WhatsApp no tapen contenido.
+
+4. Se actualizó el cache bust del CSS a ?v=5.2 para obligar a Vercel/navegador a cargar el CSS nuevo.
+
+5. Se mantuvieron las reglas SEO del documento Word:
+   - Title: LogiPlus Panamá | Seguro de Carga, Logística Internacional y Casillero Miami
+   - Meta description orientada a seguro de carga, importaciones USA, transporte internacional, consolidación China y gestión aduanal
+   - Keywords naturales: seguro de carga Panamá, importación desde Estados Unidos a Panamá, casillero Miami Panamá, China LCL, freight forwarder Panamá, etc.
+   - H1 principal con enfoque en operación internacional
+   - H2/H3 por secciones: tracking, seguro de carga, USA, China LCL, casillero, FAQ, contacto
+   - FAQ SEO conservado
+   - Footer SEO conservado
+
+IMPORTANTE:
+Sube estos archivos reemplazando los existentes. Si Vercel no muestra el cambio inmediatamente, hacer redeploy y limpiar cache del navegador.
