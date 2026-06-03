@@ -1,0 +1,30 @@
+CAMBIOS V7 - LOGIPLUS / LOGTRANSPOR
+
+ZIP de cambios para sobrescribir sobre el proyecto actual.
+
+Archivos modificados:
+- index.html
+- assets/css/logiplus-custom.css
+- assets/js/logiplus-custom.js
+
+Imágenes nuevas generadas:
+- assets/images/logiplus/hero-v7.png
+- assets/images/logiplus/insurance-v7.png
+- assets/images/logiplus/usa-v7.png
+- assets/images/logiplus/locker-v7.png
+
+Qué se cambió:
+1. Se reconstruyó la dirección visual para acercarse más al template Trucker: hero con slider visual, más movimiento, fondos grandes y secciones tipo parallax.
+2. Se agregaron imágenes premium generadas para hero, seguro de carga, USA/logística y casillero Miami.
+3. Se mejoró el tracking: se quitó el texto técnico de “si todavía no hay integración externa” y se dejó una microcopy comercial.
+4. Se mantuvieron las reglas SEO del Word: title, meta description, keywords naturales, H1 principal, H2/H3 por secciones, FAQ SEO y footer SEO.
+5. Se mantuvo el orden base del Word: Hero, Tracking, Mensaje de valor, Servicios, Seguro, USA, Logística, Transporte, China LCL, Casillero, Cómo trabajamos, Por qué elegirnos, Clientes/necesidades, FAQ, CTA final, Contacto y Footer SEO.
+6. Se arregló especialmente mobile para que las cards de servicios no se vean apretadas ni corten palabras letra por letra.
+7. Se mejoró el header para que el logo no domine tanto.
+8. WhatsApp configurado: +507 6090-3814.
+9. Correo configurado: dulce@logipluspty.com.
+
+Importante:
+- Subir los archivos respetando las carpetas.
+- El index.html ya apunta al CSS y JS con ?v=7.0 para evitar caché en Vercel.
+- Los formularios siguen enviando a WhatsApp con mensaje prellenado.
