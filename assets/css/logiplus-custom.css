@@ -504,3 +504,47 @@ a{text-decoration:none}
     grid-template-columns:1fr!important;
   }
 }
+
+
+/* ==============================
+   V8.2 — Servicios imágenes nuevas + badge corregido
+   ============================== */
+.lp-service-card--visual{
+  overflow:visible!important;
+}
+.lp-service-card__image{
+  height:228px!important;
+  border-top-left-radius:28px;
+  border-top-right-radius:28px;
+}
+.lp-service-card__badge{
+  bottom:-22px!important;
+  width:72px!important;
+  height:72px!important;
+  left:26px!important;
+}
+.lp-service-card__body{
+  padding:58px 32px 32px!important;
+}
+.lp-service-card__body p{
+  min-height:70px;
+}
+@media (max-width:991px){
+  .lp-service-card__image{
+    height:230px!important;
+  }
+}
+@media (max-width:767px){
+  .lp-service-card__badge{
+    width:68px!important;
+    height:68px!important;
+    bottom:-20px!important;
+    left:22px!important;
+  }
+  .lp-service-card__body{
+    padding:54px 24px 28px!important;
+  }
+  .lp-service-card__body p{
+    min-height:0;
+  }
+}
