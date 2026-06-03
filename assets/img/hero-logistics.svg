@@ -1,0 +1,52 @@
+<svg width="980" height="720" viewBox="0 0 980 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="bg" x1="87" y1="31" x2="853" y2="705" gradientUnits="userSpaceOnUse"><stop stop-color="#EAF7FF"/><stop offset=".52" stop-color="#F7FBFF"/><stop offset="1" stop-color="#E9F0FF"/></linearGradient>
+  <linearGradient id="blue" x1="125" y1="73" x2="852" y2="691" gradientUnits="userSpaceOnUse"><stop stop-color="#35C0FF"/><stop offset="1" stop-color="#0064FF"/></linearGradient>
+  <linearGradient id="navy" x1="151" y1="100" x2="789" y2="637" gradientUnits="userSpaceOnUse"><stop stop-color="#122E63"/><stop offset="1" stop-color="#041A3B"/></linearGradient>
+  <filter id="shadow" x="0" y="0" width="980" height="720" filterUnits="userSpaceOnUse"><feDropShadow dx="0" dy="30" stdDeviation="34" flood-color="#052D6B" flood-opacity=".18"/></filter>
+  <filter id="mini" x="0" y="0" width="980" height="720" filterUnits="userSpaceOnUse"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#052D6B" flood-opacity=".16"/></filter>
+</defs>
+<rect x="72" y="42" width="836" height="626" rx="46" fill="url(#bg)"/>
+<g opacity=".45">
+  <circle cx="491" cy="356" r="205" stroke="#CFE6FF" stroke-width="2"/>
+  <circle cx="491" cy="356" r="292" stroke="#D8E9FA" stroke-width="2"/>
+  <path d="M191 356h598M491 108v496" stroke="#D7EAFB" stroke-width="2"/>
+  <path d="M292 199c92 58 292 58 397 0M292 513c92-58 292-58 397 0" stroke="#D7EAFB" stroke-width="2"/>
+</g>
+<g filter="url(#shadow)">
+  <rect x="164" y="128" width="652" height="418" rx="34" fill="white"/>
+  <rect x="188" y="152" width="604" height="370" rx="28" fill="url(#navy)"/>
+  <path d="M242 431c72-99 153-117 254-64 93 48 167 18 240-86v198H242v-48Z" fill="#0D3977"/>
+  <path d="M242 459c98-88 181-88 278-28 88 55 146 42 216-17v65H242v-20Z" fill="#0B2E63"/>
+  <path d="M273 323c58-37 122-55 188-55 112 0 205 52 267 128" stroke="#3ABCFF" stroke-width="9" stroke-linecap="round" opacity=".88"/>
+  <path d="M276 323c45 18 97 27 157 27 123 0 216-44 289-136" stroke="#78D7FF" stroke-width="3" stroke-dasharray="10 14" opacity=".75"/>
+  <circle cx="320" cy="301" r="12" fill="#35C0FF"/><circle cx="568" cy="358" r="12" fill="#35C0FF"/><circle cx="728" cy="214" r="12" fill="#35C0FF"/>
+</g>
+<g filter="url(#mini)">
+  <rect x="90" y="442" width="236" height="122" rx="24" fill="white"/>
+  <rect x="116" y="468" width="98" height="44" rx="12" fill="#E9F6FF"/>
+  <path d="M127 504h153" stroke="#0B2D66" stroke-width="11" stroke-linecap="round"/>
+  <path d="M226 475h49l27 29h-76v-29Z" fill="#0077FF"/>
+  <circle cx="143" cy="523" r="13" fill="#071D3D"/><circle cx="270" cy="523" r="13" fill="#071D3D"/>
+  <text x="118" y="458" font-family="Inter, Arial" font-size="13" font-weight="800" fill="#0077FF">TERRESTRE</text>
+</g>
+<g filter="url(#mini)">
+  <rect x="642" y="76" width="214" height="138" rx="24" fill="white"/>
+  <path d="M704 145l113-42-59 94-15-38-39-14Z" fill="#0077FF"/>
+  <path d="M704 145l39 14 15 38" stroke="#A7DAFF" stroke-width="5" stroke-linecap="round"/>
+  <text x="671" y="116" font-family="Inter, Arial" font-size="13" font-weight="800" fill="#0077FF">AÉREO</text>
+</g>
+<g filter="url(#mini)">
+  <rect x="640" y="500" width="244" height="114" rx="24" fill="white"/>
+  <path d="M677 557h167l-17 25H704l-27-25Z" fill="#071D3D"/>
+  <path d="M706 522h98v35h-98v-35Z" fill="#0077FF"/><path d="M719 537h12M746 537h12M773 537h12" stroke="#BCEAFF" stroke-width="4" stroke-linecap="round"/>
+  <path d="M670 583c37 14 74 13 110 0 30-10 60-10 91 0" stroke="#35C0FF" stroke-width="5" stroke-linecap="round"/>
+  <text x="666" y="526" font-family="Inter, Arial" font-size="13" font-weight="800" fill="#0077FF">MARÍTIMO</text>
+</g>
+<g filter="url(#mini)">
+  <rect x="124" y="88" width="216" height="128" rx="24" fill="white"/>
+  <path d="M232 118l56 23v45c0 19-34 34-56 44-22-10-56-25-56-44v-45l56-23Z" fill="#EAF7FF" stroke="#0077FF" stroke-width="6"/>
+  <path d="M210 172l15 16 35-42" stroke="#071D3D" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="158" y="124" font-family="Inter, Arial" font-size="13" font-weight="800" fill="#0077FF">SEGURO</text>
+</g>
+</svg>
