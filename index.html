@@ -15,10 +15,7 @@
   <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
   <link rel="stylesheet preload" href="assets/css/font-awesome-pro.css" as="style">
   <link rel="stylesheet preload" href="assets/css/bootstrap.min.css" as="style">
-  <link rel="stylesheet preload" href="assets/css/swiper.css" as="style">
-  <link rel="stylesheet preload" href="assets/css/nice-select.css" as="style">
   <link rel="stylesheet preload" href="assets/css/animate.css" as="style">
-  <link rel="stylesheet preload" href="assets/css/magnific-popup.css" as="style">
   <link rel="stylesheet preload" href="assets/css/style.css" as="style">
   <link rel="stylesheet" href="assets/css/logiplus-custom.css">
 </head>
@@ -32,8 +29,8 @@
   </div>
 
   <div class="top-strip">
-    <div class="container d-flex justify-content-between align-items-center gap-3 flex-wrap">
-      <p><i class="fa-regular fa-shield-check"></i> Seguro de carga · USA · China LCL · Casillero Miami</p>
+    <div class="container top-inner">
+      <p><i class="fa-regular fa-shield-check"></i> Seguro de carga · Importaciones USA · China LCL · Casillero Miami</p>
       <div class="top-actions">
         <a href="mailto:dulce@logipluspty.com"><i class="fa-regular fa-envelope"></i> dulce@logipluspty.com</a>
         <a href="https://wa.me/50760903814" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> +507 6090-3814</a>
@@ -52,6 +49,7 @@
         <a href="#servicios">Servicios</a>
         <a href="#seguro">Seguro de Carga</a>
         <a href="#usa">Importaciones USA</a>
+        <a href="#casillero">Casillero</a>
         <a href="#contacto">Contacto</a>
       </div>
       <a class="btn-main nav-cta" href="#contacto"><i class="fa-regular fa-headset"></i> Solicitar Asesoría</a>
@@ -60,27 +58,51 @@
 
   <main>
     <section class="hero-section section-pad">
-      <div class="hero-noise"></div>
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-decor hero-decor-1"></div>
+      <div class="hero-decor hero-decor-2"></div>
       <div class="container hero-grid">
         <div class="hero-copy wow fadeInUp">
           <span class="eyebrow"><i class="fa-regular fa-location-dot"></i> Freight forwarder en Panamá</span>
           <h1>Protegemos tu carga, gestionamos tu logística y aseguramos tu operación internacional.</h1>
-          <p class="hero-lead">Especialistas en <strong>seguro de carga en Panamá</strong>, importaciones desde Estados Unidos y soluciones logísticas a la medida.</p>
+          <p class="hero-lead">Especialistas en <strong>seguro de carga en Panamá</strong>, importaciones desde Estados Unidos, transporte internacional, consolidación desde China y soluciones logísticas a la medida.</p>
           <div class="hero-actions">
             <a class="btn-main" href="#contacto"><i class="fa-regular fa-comments"></i> Solicitar Asesoría</a>
-            <a class="btn-light" href="#seguro"><i class="fa-regular fa-shield-check"></i> Cotizar Seguro de Carga</a>
+            <a class="btn-light" href="#seguro"><i class="fa-regular fa-shield-check"></i> Cotizar Seguro</a>
             <a class="btn-ghost" href="#tracking"><i class="fa-regular fa-magnifying-glass-location"></i> Rastrear Paquete</a>
           </div>
-          <div class="quick-access" aria-label="Accesos rápidos">
+          <div class="quick-access">
             <a href="#tracking"><i class="fa-regular fa-box"></i> Tracking</a>
             <a href="#casillero"><i class="fa-regular fa-house-building"></i> Abrir Casillero</a>
             <a href="#seguro"><i class="fa-regular fa-lock-keyhole"></i> Cotizar Seguro</a>
           </div>
         </div>
-        <div class="hero-visual wow fadeInRight" data-wow-delay=".15s">
-          <img class="hero-illustration" src="assets/images/logiplus/hero-command.svg" alt="Centro de control logístico LogiPlus">
-          <div class="floating-card fc-one"><strong>Todo Riesgo</strong><span>Cobertura para carga aérea y marítima</span></div>
-          <div class="floating-card fc-two"><strong>USA → Panamá</strong><span>Casillero, compras y coordinación completa</span></div>
+        <div class="hero-cards wow fadeInRight" data-wow-delay=".1s">
+          <div class="hero-stat glass-card">
+            <span class="stat-icon"><i class="fa-regular fa-shield-check"></i></span>
+            <div>
+              <strong>Todo Riesgo</strong>
+              <p>Cobertura para carga aérea, marítima y transporte internacional.</p>
+            </div>
+          </div>
+          <div class="hero-stat glass-card delay">
+            <span class="stat-icon"><i class="fa-regular fa-plane-departure"></i></span>
+            <div>
+              <strong>USA → Panamá</strong>
+              <p>Casillero, compras, documentación y coordinación completa.</p>
+            </div>
+          </div>
+          <div class="hero-mini-grid">
+            <div class="mini-card">
+              <h3>+100%</h3>
+              <p>Foco en control, trazabilidad y comunicación clara.</p>
+            </div>
+            <div class="mini-card dark">
+              <h3>360°</h3>
+              <p>Operación integral: carga, seguro, proveedores y entrega final.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -91,7 +113,7 @@
           <div>
             <span class="eyebrow blue"><i class="fa-regular fa-satellite-dish"></i> Tracking visible</span>
             <h2>Rastrea tu paquete en tiempo real</h2>
-            <p>Consulta el estado de paquete desde USA. Si el tracking aún no está conectado a un sistema externo, tu solicitud se envía directo a WhatsApp con el número.</p>
+            <p>Consulta el estado de tu paquete desde USA. Si todavía no hay integración externa, tu solicitud se envía directo por WhatsApp con el número de tracking.</p>
           </div>
           <form class="tracking-form" id="trackingForm">
             <label class="sr-only" for="trackingNumber">Número de tracking</label>
@@ -102,17 +124,19 @@
       </div>
     </section>
 
-    <section class="value-section section-pad-sm">
-      <div class="container value-grid">
-        <div class="value-title wow fadeInLeft">
-          <span class="eyebrow blue">Mensaje de valor</span>
-          <h2>No solo movemos mercancía. Protegemos tu inversión y te damos control en cada etapa.</h2>
-        </div>
-        <div class="value-points wow fadeInRight">
-          <div><i class="fa-regular fa-badge-check"></i> Procesos formales</div>
-          <div><i class="fa-regular fa-route"></i> Trazabilidad</div>
-          <div><i class="fa-regular fa-message-lines"></i> Comunicación clara</div>
-          <div><i class="fa-regular fa-user-headset"></i> Acompañamiento experto</div>
+    <section class="trust-section section-pad-sm">
+      <div class="container">
+        <div class="trust-card wow fadeInUp">
+          <div class="trust-copy">
+            <span class="eyebrow blue">Mensaje de valor</span>
+            <h2>No solo movemos mercancía. Protegemos tu inversión y te damos control en cada etapa.</h2>
+          </div>
+          <div class="trust-points">
+            <div><i class="fa-regular fa-badge-check"></i><span>Procesos formales</span></div>
+            <div><i class="fa-regular fa-route"></i><span>Trazabilidad</span></div>
+            <div><i class="fa-regular fa-message-lines"></i><span>Comunicación clara</span></div>
+            <div><i class="fa-regular fa-user-headset"></i><span>Acompañamiento experto</span></div>
+          </div>
         </div>
       </div>
     </section>
@@ -121,35 +145,62 @@
       <div class="container">
         <div class="section-heading center wow fadeInUp">
           <span class="eyebrow blue">Servicios clave</span>
-          <h2>Soluciones logísticas que venden confianza desde el primer contacto.</h2>
-          <p>Una operación internacional necesita coordinación, cobertura, documentación y comunicación clara.</p>
+          <h2>Soluciones logísticas que inspiran confianza desde el primer contacto.</h2>
+          <p>Una operación internacional necesita cobertura, seguimiento, documentación y una ejecución bien coordinada.</p>
         </div>
-        <div class="service-grid">
+        <div class="service-grid service-grid-extended">
           <article class="service-card wow fadeInUp">
-            <img src="assets/images/logiplus/insurance-shield.svg" alt="Seguro de carga">
+            <div class="service-thumb thumb-insurance"></div>
             <div class="service-content">
               <span>01</span>
               <h3>Seguro de Carga</h3>
-              <p>Protección Todo Riesgo para mercancía internacional.</p>
+              <p>Protección Todo Riesgo para mercancía internacional con acompañamiento en cada detalle.</p>
               <a href="#seguro">Cotizar Seguro <i class="fa-regular fa-arrow-right"></i></a>
             </div>
           </article>
-          <article class="service-card wow fadeInUp" data-wow-delay=".1s">
-            <img src="assets/images/logiplus/warehouse-control.svg" alt="Logística a la medida">
+          <article class="service-card wow fadeInUp" data-wow-delay=".05s">
+            <div class="service-thumb thumb-usa"></div>
             <div class="service-content">
               <span>02</span>
+              <h3>Importaciones USA</h3>
+              <p>Coordinación completa desde Estados Unidos hacia Panamá con enfoque práctico y claro.</p>
+              <a href="#usa">Cotizar Importación <i class="fa-regular fa-arrow-right"></i></a>
+            </div>
+          </article>
+          <article class="service-card wow fadeInUp" data-wow-delay=".1s">
+            <div class="service-thumb thumb-custom"></div>
+            <div class="service-content">
+              <span>03</span>
               <h3>Logística a la Medida</h3>
-              <p>Diseñamos y ejecutamos operaciones completas.</p>
+              <p>Diseñamos y ejecutamos operaciones para empresas, proyectos y cadenas de suministro.</p>
               <a href="#logistica">Solicitar Asesoría <i class="fa-regular fa-arrow-right"></i></a>
             </div>
           </article>
-          <article class="service-card wow fadeInUp" data-wow-delay=".2s">
-            <img src="assets/images/logiplus/usa-imports.svg" alt="Importaciones USA">
+          <article class="service-card wow fadeInUp" data-wow-delay=".15s">
+            <div class="service-thumb thumb-international"></div>
             <div class="service-content">
-              <span>03</span>
-              <h3>Importaciones USA</h3>
-              <p>Coordinación completa desde Estados Unidos.</p>
-              <a href="#usa">Cotizar Importación <i class="fa-regular fa-arrow-right"></i></a>
+              <span>04</span>
+              <h3>Transporte Internacional</h3>
+              <p>Gestión de carga aérea, marítima y terrestre con control, cumplimiento y trazabilidad.</p>
+              <a href="#logistica">Conocer más <i class="fa-regular fa-arrow-right"></i></a>
+            </div>
+          </article>
+          <article class="service-card wow fadeInUp" data-wow-delay=".2s">
+            <div class="service-thumb thumb-china"></div>
+            <div class="service-content">
+              <span>05</span>
+              <h3>China LCL</h3>
+              <p>Consolidación eficiente desde China a Panamá para volúmenes pequeños y medianos.</p>
+              <a href="#china">Ver solución <i class="fa-regular fa-arrow-right"></i></a>
+            </div>
+          </article>
+          <article class="service-card wow fadeInUp" data-wow-delay=".25s">
+            <div class="service-thumb thumb-locker"></div>
+            <div class="service-content">
+              <span>06</span>
+              <h3>Casillero Miami</h3>
+              <p>Recibe tus compras en USA y gestiona tu entrega final en Panamá con respaldo.</p>
+              <a href="#casillero">Abrir Casillero <i class="fa-regular fa-arrow-right"></i></a>
             </div>
           </article>
         </div>
@@ -163,18 +214,21 @@
           <h2>Seguro de carga en Panamá – cobertura Todo Riesgo</h2>
           <p>Ofrecemos <strong>seguro de carga en Panamá</strong> para carga aérea, marítima y transporte internacional, protegiendo tu mercancía de daños, pérdida, robo e incidentes desde origen hasta destino.</p>
           <ul class="check-list">
-            <li><i class="fa-regular fa-check"></i> Cobertura para carga aérea y marítima</li>
-            <li><i class="fa-regular fa-check"></i> Acompañamiento para documentación</li>
-            <li><i class="fa-regular fa-check"></i> Respuesta clara para empresas y compras puntuales</li>
+            <li><i class="fa-regular fa-check"></i> Protección para operaciones aéreas, marítimas y terrestres</li>
+            <li><i class="fa-regular fa-check"></i> Acompañamiento en documentación y evaluación de ruta</li>
+            <li><i class="fa-regular fa-check"></i> Soluciones para empresas, importadores y mercancía de valor</li>
           </ul>
+          <div class="image-frame mt-4">
+            <img src="assets/images/logiplus/insurance-premium.png" alt="Seguro de carga en Panamá con protección logística premium">
+          </div>
         </div>
         <div class="form-panel wow fadeInRight">
           <h3>Cotizar seguro de carga</h3>
-          <p>Déjanos los datos principales y te contactamos con la cotización.</p>
+          <p>Déjanos los datos principales y te enviamos una cotización clara para tu operación.</p>
           <form id="insuranceForm" class="smart-form">
             <div class="form-row"><input name="Nombre" placeholder="Nombre" required><input name="Empresa" placeholder="Empresa"></div>
             <div class="form-row"><input name="Teléfono" placeholder="Teléfono" required><input name="Email" type="email" placeholder="Email"></div>
-            <div class="form-row"><input name="Valor de mercancía" placeholder="Valor de la mercancía"><input name="Tipo de mercancía" placeholder="Tipo de mercancía"></div>
+            <div class="form-row"><input name="Valor de la mercancía" placeholder="Valor de la mercancía"><input name="Tipo de mercancía" placeholder="Tipo de mercancía"></div>
             <div class="form-row"><input name="Origen" placeholder="Origen (USA / China / otro)"><input name="Destino" placeholder="Destino"></div>
             <select name="Tipo de transporte" aria-label="Tipo de transporte"><option value="">Tipo de transporte</option><option>Aéreo</option><option>Marítimo</option><option>Terrestre</option></select>
             <button class="btn-main full" type="submit"><i class="fa-regular fa-shield-check"></i> Cotizar seguro de carga</button>
@@ -184,36 +238,51 @@
       </div>
     </section>
 
-    <section class="usa-section section-pad" id="usa">
-      <div class="container feature-grid reverse align-items-center">
-        <div class="feature-image wow fadeInLeft"><img src="assets/images/logiplus/usa-imports.svg" alt="Importaciones y exportaciones con Estados Unidos"></div>
-        <div class="feature-copy wow fadeInRight">
-          <span class="eyebrow blue">USA es tu fortaleza</span>
-          <h2>Importaciones y exportaciones con Estados Unidos</h2>
-          <p>Especialistas en <strong>importación desde Estados Unidos a Panamá</strong> y exportaciones hacia USA: casillero Miami, compras en USA, transporte aéreo y marítimo, y coordinación completa.</p>
-          <a class="btn-main" href="#contacto"><i class="fa-regular fa-plane-departure"></i> Cotizar importación USA</a>
+    <section class="routes-section section-pad" id="usa">
+      <div class="container">
+        <div class="section-heading center wow fadeInUp">
+          <span class="eyebrow blue">Rutas y fortalezas</span>
+          <h2>Importaciones USA, logística a la medida y consolidación China LCL.</h2>
+          <p>Tu operación puede combinar casillero, compras, proveedores, seguro y transporte internacional en un solo flujo ordenado.</p>
+        </div>
+        <div class="routes-grid">
+          <article class="route-card big wow fadeInUp">
+            <div class="route-visual"><img src="assets/images/logiplus/global-logistics-premium.png" alt="Importaciones y exportaciones con Estados Unidos y transporte internacional"></div>
+            <div class="route-content">
+              <span class="route-label">USA es tu fortaleza</span>
+              <h3>Importaciones y exportaciones con Estados Unidos</h3>
+              <p>Especialistas en <strong>importación desde Estados Unidos a Panamá</strong> y exportaciones hacia USA: casillero Miami, compras en USA, transporte aéreo y marítimo y coordinación completa.</p>
+              <a class="btn-main" href="#contacto"><i class="fa-regular fa-plane-departure"></i> Cotizar importación USA</a>
+            </div>
+          </article>
+          <div class="route-stack">
+            <article class="route-card wow fadeInUp" data-wow-delay=".05s" id="logistica">
+              <span class="route-label">Logística a la medida</span>
+              <h3>Diseñamos soluciones para empresas y proyectos</h3>
+              <p>Compras internacionales, coordinación de proveedores, consolidación y entrega final con seguimiento claro.</p>
+            </article>
+            <article class="route-card dark wow fadeInUp" data-wow-delay=".1s" id="china">
+              <span class="route-label">China – Consolidación LCL</span>
+              <h3>Optimiza costos y agrupa proveedores</h3>
+              <p>Servicio de consolidación LCL desde China a Panamá, ideal para paquetería o cargas pequeñas y medianas.</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="solution-strip section-pad" id="logistica">
-      <div class="container">
-        <div class="solution-grid">
-          <article class="solution-card dark wow fadeInUp">
-            <img src="assets/images/logiplus/warehouse-control.svg" alt="Logística a la medida">
-            <h3>Logística a la medida</h3>
-            <p>Diseñamos soluciones para empresas y proyectos: compras internacionales, coordinación de proveedores, consolidación y entrega final.</p>
-          </article>
-          <article class="solution-card wow fadeInUp" data-wow-delay=".1s">
-            <img src="assets/images/logiplus/transport-global.svg" alt="Transporte internacional">
-            <h3>Transporte internacional</h3>
-            <p>Gestión de carga aérea, marítima y terrestre con control, trazabilidad y cumplimiento.</p>
-          </article>
-          <article class="solution-card wow fadeInUp" data-wow-delay=".2s">
-            <img src="assets/images/logiplus/china-lcl.svg" alt="China LCL">
-            <h3>China – Consolidación LCL</h3>
-            <p>Servicio de consolidación LCL desde China a Panamá para paquetería, ideal para volúmenes pequeños y medianos.</p>
-          </article>
+    <section class="metrics-section section-pad-sm">
+      <div class="container metrics-shell wow fadeInUp">
+        <div class="metrics-copy">
+          <span class="eyebrow light">Operación con respaldo</span>
+          <h2>Un aliado logístico, no solo un proveedor.</h2>
+          <p>Tu carga necesita más que transporte: necesita control, estructura, comunicación y una ejecución pensada para reducir fricción.</p>
+        </div>
+        <div class="metrics-grid">
+          <div class="metric-card"><strong>01</strong><span>Seguridad en tu inversión</span></div>
+          <div class="metric-card"><strong>02</strong><span>Procesos claros</span></div>
+          <div class="metric-card"><strong>03</strong><span>Cumplimiento real</span></div>
+          <div class="metric-card"><strong>04</strong><span>Acompañamiento personalizado</span></div>
         </div>
       </div>
     </section>
@@ -223,12 +292,19 @@
         <div class="feature-copy wow fadeInLeft">
           <span class="eyebrow blue"><i class="fa-regular fa-house-building"></i> Casillero Miami</span>
           <h2>Abre tu casillero en Miami con LogiPlus</h2>
-          <p>Recibe tus compras en USA, manejo seguro y entrega final en Panamá con comunicación clara y acompañamiento.</p>
-          <img class="inline-visual" src="assets/images/logiplus/locker-miami.svg" alt="Casillero en Miami LogiPlus">
+          <p>Recibe tus compras en USA, manejo seguro y entrega final en Panamá. Una solución ideal si quieres centralizar compras y mantener comunicación clara.</p>
+          <ul class="check-list dark-list">
+            <li><i class="fa-regular fa-check"></i> Recepción y manejo organizado de tus paquetes</li>
+            <li><i class="fa-regular fa-check"></i> Orientación para compras y consolidación</li>
+            <li><i class="fa-regular fa-check"></i> Entrega final con soporte directo</li>
+          </ul>
+          <div class="image-frame mt-4 light-frame">
+            <img src="assets/images/logiplus/locker-premium.png" alt="Casillero Miami y gestión de paquetes LogiPlus">
+          </div>
         </div>
         <div class="form-panel light-panel wow fadeInRight">
           <h3>Solicitar mi casillero</h3>
-          <p>Recibirás tu dirección en Miami e instrucciones.</p>
+          <p>Recibirás tu dirección en Miami e instrucciones para empezar a comprar.</p>
           <form id="lockerForm" class="smart-form">
             <div class="form-row"><input name="Nombre" placeholder="Nombre" required><input name="Cédula" placeholder="Cédula"></div>
             <div class="form-row"><input name="Teléfono" placeholder="Teléfono" required><input name="Email" type="email" placeholder="Email"></div>
@@ -248,22 +324,10 @@
           <h2>Un proceso simple para operaciones que necesitan orden y respaldo.</h2>
         </div>
         <div class="process-grid">
-          <div class="process-step wow fadeInUp"><span>01</span><h3>Evaluamos tu necesidad</h3><p>Entendemos ruta, tipo de carga, valor y tiempos.</p></div>
-          <div class="process-step wow fadeInUp" data-wow-delay=".1s"><span>02</span><h3>Diseñamos la solución</h3><p>Definimos transporte, seguro, consolidación y documentación.</p></div>
-          <div class="process-step wow fadeInUp" data-wow-delay=".2s"><span>03</span><h3>Ejecutamos la operación</h3><p>Coordinamos cada etapa con seguimiento claro.</p></div>
-          <div class="process-step wow fadeInUp" data-wow-delay=".3s"><span>04</span><h3>Supervisamos la entrega</h3><p>Te damos control hasta el cierre de la entrega final.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="why-section section-pad-sm">
-      <div class="container why-card wow fadeInUp">
-        <div>
-          <span class="eyebrow light">Por qué elegirnos</span>
-          <h2>Un aliado logístico, no solo un proveedor.</h2>
-        </div>
-        <div class="why-list">
-          <span>Seguridad en tu inversión</span><span>Procesos claros</span><span>Cumplimiento real</span><span>Acompañamiento personalizado</span><span>Soluciones integrales</span>
+          <div class="process-step wow fadeInUp"><span>01</span><h3>Evaluamos tu necesidad</h3><p>Entendemos ruta, tipo de carga, valor, tiempos y alcance de tu operación.</p></div>
+          <div class="process-step wow fadeInUp" data-wow-delay=".08s"><span>02</span><h3>Diseñamos la solución</h3><p>Definimos transporte, seguro, consolidación, compras o casillero según el caso.</p></div>
+          <div class="process-step wow fadeInUp" data-wow-delay=".16s"><span>03</span><h3>Ejecutamos la operación</h3><p>Coordinamos proveedores, documentación y cada etapa con seguimiento claro.</p></div>
+          <div class="process-step wow fadeInUp" data-wow-delay=".24s"><span>04</span><h3>Supervisamos la entrega</h3><p>Te damos visibilidad y control hasta el cierre de la entrega final.</p></div>
         </div>
       </div>
     </section>
@@ -275,9 +339,9 @@
           <h2>Confianza, eficiencia y cumplimiento en cada operación.</h2>
         </div>
         <div class="testimonial-grid">
-          <article class="testimonial-card wow fadeInUp"><i class="fa-solid fa-quote-left"></i><p>“Comunicación clara desde el origen hasta la entrega. Nos ayudaron a ordenar todo el proceso.”</p><strong>Cliente empresarial</strong></article>
-          <article class="testimonial-card wow fadeInUp" data-wow-delay=".1s"><i class="fa-solid fa-quote-left"></i><p>“El seguro de carga nos dio tranquilidad para importar mercancía de alto valor.”</p><strong>Importador en Panamá</strong></article>
-          <article class="testimonial-card wow fadeInUp" data-wow-delay=".2s"><i class="fa-solid fa-quote-left"></i><p>“El casillero y la coordinación desde USA hicieron la compra mucho más sencilla.”</p><strong>Cliente casillero Miami</strong></article>
+          <article class="testimonial-card wow fadeInUp"><i class="fa-solid fa-quote-left"></i><p>“Comunicación clara desde el origen hasta la entrega. Nos ayudaron a ordenar toda la operación y a tener más tranquilidad.”</p><strong>Cliente empresarial</strong></article>
+          <article class="testimonial-card wow fadeInUp" data-wow-delay=".08s"><i class="fa-solid fa-quote-left"></i><p>“El seguro de carga nos dio respaldo para importar mercancía de alto valor sin sentir que estábamos solos.”</p><strong>Importador en Panamá</strong></article>
+          <article class="testimonial-card wow fadeInUp" data-wow-delay=".16s"><i class="fa-solid fa-quote-left"></i><p>“El casillero y la coordinación desde USA hicieron nuestras compras mucho más fáciles y mejor organizadas.”</p><strong>Cliente casillero Miami</strong></article>
         </div>
       </div>
     </section>
@@ -285,13 +349,13 @@
     <section class="faq-section section-pad" id="faq">
       <div class="container faq-grid">
         <div class="section-heading wow fadeInLeft">
-          <span class="eyebrow blue">FAQ SEO + IA</span>
+          <span class="eyebrow blue">FAQ SEO</span>
           <h2>Preguntas frecuentes sobre seguro de carga y logística internacional.</h2>
-          <p>Contenido pensado para ayudar al cliente y posicionar búsquedas de logística en Panamá.</p>
+          <p>Contenido pensado para orientar al cliente y reforzar búsquedas relevantes de logística en Panamá.</p>
         </div>
         <div class="faq-list wow fadeInRight">
-          <details open><summary>¿Qué es un seguro de carga?</summary><p>Protege tu mercancía ante pérdidas, daños, robo o incidentes durante la operación logística.</p></details>
-          <details><summary>¿Cómo importar desde USA a Panamá?</summary><p>Con un operador que gestione transporte, aduanas, documentación, seguimiento y entrega final.</p></details>
+          <details open><summary>¿Qué es un seguro de carga?</summary><p>Protege tu mercancía ante pérdidas, daños, robo o incidentes durante la operación logística y el trayecto.</p></details>
+          <details><summary>¿Cómo importar desde USA a Panamá?</summary><p>Con un operador que gestione transporte, aduanas, documentación, seguimiento, casillero si aplica y entrega final.</p></details>
           <details><summary>¿Qué es LCL desde China?</summary><p>Es consolidación de carga para reducir costos agrupando proveedores y mercancía en volúmenes pequeños o medianos.</p></details>
           <details><summary>¿Cuánto cuesta asegurar la carga?</summary><p>Depende del valor de la mercancía, tipo de producto, ruta, origen, destino y modalidad de transporte.</p></details>
         </div>
@@ -300,7 +364,10 @@
 
     <section class="final-cta section-pad-sm">
       <div class="container cta-card wow fadeInUp">
-        <div><h2>Tu operación logística merece control, seguridad y respaldo profesional.</h2><p>Habla con LogiPlus y recibe asesoría para tu próximo movimiento internacional.</p></div>
+        <div>
+          <h2>Tu operación logística merece control, seguridad y respaldo profesional.</h2>
+          <p>Habla con LogiPlus y recibe asesoría para tu próximo movimiento internacional.</p>
+        </div>
         <a class="btn-main" href="https://wa.me/50760903814?text=Hola%20LogiPlus%2C%20quiero%20asesor%C3%ADa%20para%20mi%20operaci%C3%B3n%20log%C3%ADstica" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Hablar por WhatsApp</a>
       </div>
     </section>
@@ -310,7 +377,7 @@
         <div class="contact-info wow fadeInLeft">
           <span class="eyebrow blue">Contacto</span>
           <h2>Solicita asesoría logística hoy.</h2>
-          <p>Cuéntanos qué necesitas mover, asegurar o coordinar. Te respondemos por WhatsApp o correo.</p>
+          <p>Cuéntanos qué necesitas mover, asegurar o coordinar. Te respondemos por WhatsApp o correo con un enfoque claro y profesional.</p>
           <div class="contact-box"><i class="fa-brands fa-whatsapp"></i><div><strong>WhatsApp</strong><a href="https://wa.me/50760903814" target="_blank" rel="noopener">+507 6090-3814</a></div></div>
           <div class="contact-box"><i class="fa-regular fa-envelope"></i><div><strong>Email</strong><a href="mailto:dulce@logipluspty.com">dulce@logipluspty.com</a></div></div>
         </div>
@@ -339,7 +406,7 @@
         <a href="#seguro">Seguro de carga</a>
         <a href="#usa">Importaciones USA</a>
         <a href="#casillero">Casillero Miami</a>
-        <a href="#logistica">China LCL</a>
+        <a href="#china">China LCL</a>
       </div>
       <div>
         <h3>Contacto</h3>
