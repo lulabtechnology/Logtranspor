@@ -332,3 +332,482 @@ img{max-width:100%;height:auto;display:block}
   .route-card.big .route-visual{padding:16px 16px 0}
   .route-card.big .route-content{padding:22px}
 }
+
+/* =========================================================
+   V5 VISUAL DIRECTION PATCH - LULAB / LOGIPLUS
+   Objetivo: header compacto, hero con jerarquía premium,
+   tracking más confiable, rutas sin imágenes cortadas,
+   seguro más fuerte y testimonios genéricos reemplazados.
+   ========================================================= */
+
+.site-header{
+  background:rgba(255,255,255,.94);
+  box-shadow:0 10px 34px rgba(7,23,52,.06);
+}
+.nav-shell{
+  height:78px;
+}
+.brand{
+  padding:6px 12px;
+  border-radius:18px;
+  box-shadow:0 12px 28px rgba(7,23,52,.07);
+}
+.brand img{
+  width:150px;
+  max-height:54px;
+  object-fit:contain;
+}
+.nav-menu{
+  gap:22px;
+}
+.nav-menu a{
+  font-size:14px;
+}
+.nav-cta.btn-main{
+  padding:14px 22px;
+}
+
+.hero-section{
+  min-height:calc(100vh - 116px);
+  padding-top:72px;
+  padding-bottom:128px;
+}
+.hero-grid{
+  grid-template-columns:minmax(0,1.02fr) minmax(360px,.78fr);
+  gap:46px;
+}
+.hero-copy h1{
+  font-size:clamp(38px,4.75vw,62px);
+  line-height:1.01;
+  max-width:710px;
+  margin-bottom:20px;
+}
+.hero-lead{
+  max-width:660px;
+  font-size:18px;
+  line-height:1.68;
+}
+.hero-authority{
+  max-width:650px;
+  margin:13px 0 0;
+  color:#fff;
+  font-weight:850;
+  font-size:16px;
+  line-height:1.55;
+  opacity:.96;
+}
+.hero-actions{
+  margin-top:26px;
+}
+.quick-access{
+  margin-top:22px;
+}
+.hero-premium-panel{
+  align-self:center;
+  max-width:470px;
+  justify-self:end;
+}
+.glass-card{
+  padding:22px;
+  border-radius:24px;
+  background:rgba(255,255,255,.13);
+}
+.glass-card.delay{
+  margin-left:28px;
+}
+.hero-proof-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.hero-proof-row span{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  padding:16px 18px;
+  border-radius:20px;
+  background:#fff;
+  color:var(--navy);
+  font-weight:900;
+  line-height:1.35;
+  box-shadow:var(--shadow-soft);
+}
+.hero-proof-row i{
+  color:var(--blue);
+  font-size:18px;
+}
+
+.tracking-section{
+  margin-top:-66px;
+}
+.tracking-card{
+  grid-template-columns:.92fr 1.08fr;
+  padding:30px;
+}
+.tracking-card h2{
+  font-size:34px;
+}
+.tracking-action-wrap{
+  display:grid;
+  gap:12px;
+}
+.tracking-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  padding-left:4px;
+}
+.tracking-tags span{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px 12px;
+  border-radius:999px;
+  background:#eaf5ff;
+  color:var(--blue);
+  font-weight:900;
+  font-size:12px;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+.tracking-form button{
+  min-height:50px;
+}
+
+/* Servicios más respirados en desktop */
+.service-grid-extended{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+}
+.service-thumb{
+  height:210px;
+}
+.service-content h3{
+  min-height:60px;
+}
+
+/* Seguro de carga: cobertura real, más profesional */
+.coverage-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  margin-top:24px;
+}
+.coverage-grid div{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  border:1px solid rgba(255,255,255,.13);
+  background:rgba(255,255,255,.08);
+  border-radius:18px;
+  padding:14px 15px;
+  color:#fff;
+}
+.coverage-grid i{
+  width:34px;
+  height:34px;
+  min-width:34px;
+  border-radius:12px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(27,143,255,.22);
+  color:#9fd6ff;
+}
+.coverage-grid strong{
+  font-size:14px;
+  line-height:1.35;
+}
+.coverage-note{
+  margin:16px 0 0;
+  color:#cbdcf4!important;
+  font-size:13px;
+  line-height:1.6;
+  border-left:3px solid var(--blue);
+  padding-left:14px;
+}
+
+/* Rutas V5: imagen completa y texto con ancho cómodo */
+.routes-section{
+  background:#fff;
+}
+.routes-feature-card{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(420px,.92fr);
+  gap:0;
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:34px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.routes-feature-image{
+  background:linear-gradient(135deg,#eef7ff,#fff);
+  min-height:430px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+.routes-feature-image img{
+  width:100%;
+  height:100%;
+  max-height:395px;
+  object-fit:contain;
+  border-radius:24px;
+  box-shadow:0 18px 48px rgba(7,23,52,.12);
+}
+.routes-feature-content{
+  padding:44px 44px 44px 34px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.routes-feature-content h3{
+  color:var(--navy);
+  font-size:clamp(30px,3vw,43px);
+  font-weight:950;
+  letter-spacing:-.04em;
+  line-height:1.08;
+  margin:18px 0 14px;
+}
+.routes-feature-content p{
+  color:var(--muted);
+  line-height:1.75;
+  margin-bottom:18px;
+}
+.route-benefits{
+  list-style:none;
+  padding:0;
+  margin:0 0 24px;
+  display:grid;
+  gap:10px;
+}
+.route-benefits li{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  color:var(--ink);
+  font-weight:800;
+  line-height:1.45;
+}
+.route-benefits i{
+  color:var(--blue);
+  margin-top:3px;
+}
+.no-wrap{
+  align-self:flex-start;
+  white-space:nowrap;
+}
+.routes-secondary-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:24px;
+  margin-top:24px;
+}
+.routes-secondary-grid .route-card{
+  min-height:280px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.route-card-blue{
+  background:linear-gradient(180deg,#eef7ff,#fff);
+}
+.route-card-blue h3{
+  color:var(--navy);
+}
+
+/* Ocultar layout anterior de rutas si quedó por caché estructural */
+.routes-grid{
+  display:none!important;
+}
+
+/* Por qué elegirnos más comercial */
+.metrics-shell{
+  grid-template-columns:.88fr 1.12fr;
+}
+.metric-card{
+  min-height:138px;
+}
+.metric-card span{
+  font-size:15px;
+}
+
+/* Necesidades frecuentes en vez de testimonios inventados */
+.need-grid .testimonial-card{
+  background:#fff;
+}
+.need-grid .testimonial-card i{
+  width:54px;
+  height:54px;
+  border-radius:18px;
+  background:#eaf5ff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.need-grid .testimonial-card p{
+  font-size:18px;
+}
+
+/* Ajustes laptop: evitar que el hero se coma toda la pantalla */
+@media (min-width:841px) and (max-height:820px){
+  .top-strip{
+    padding:7px 0;
+    font-size:13px;
+  }
+  .nav-shell{
+    height:72px;
+  }
+  .brand img{
+    width:138px;
+    max-height:48px;
+  }
+  .hero-section{
+    min-height:680px;
+    padding-top:54px;
+    padding-bottom:104px;
+  }
+  .hero-copy h1{
+    font-size:clamp(36px,4.25vw,56px);
+    max-width:660px;
+  }
+  .hero-lead{
+    font-size:17px;
+    line-height:1.62;
+  }
+  .hero-authority{
+    font-size:15px;
+  }
+  .hero-actions{
+    margin-top:22px;
+  }
+  .quick-access{
+    margin-top:18px;
+  }
+  .glass-card{
+    padding:18px;
+  }
+  .stat-icon{
+    width:50px;
+    height:50px;
+    min-width:50px;
+  }
+  .hero-stat strong{
+    font-size:19px;
+  }
+  .hero-stat p{
+    font-size:14px;
+  }
+  .hero-proof-row span{
+    padding:14px;
+    font-size:13px;
+  }
+}
+
+/* Desktop mediano: que rutas no se corten ni el botón rompa línea */
+@media(max-width:1280px){
+  .routes-feature-card{
+    grid-template-columns:1fr 1fr;
+  }
+  .routes-feature-content{
+    padding:36px 34px;
+  }
+  .routes-feature-image{
+    min-height:390px;
+  }
+  .no-wrap{
+    white-space:normal;
+  }
+}
+
+@media(max-width:1150px){
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
+  .hero-premium-panel{
+    max-width:100%;
+    justify-self:stretch;
+  }
+  .glass-card.delay{
+    margin-left:0;
+  }
+  .routes-feature-card,
+  .metrics-shell{
+    grid-template-columns:1fr;
+  }
+  .routes-feature-content{
+    padding:32px;
+  }
+  .routes-secondary-grid{
+    grid-template-columns:1fr;
+  }
+  .routes-feature-image{
+    min-height:auto;
+  }
+  .routes-feature-image img{
+    max-height:none;
+  }
+}
+
+@media(max-width:840px){
+  .nav-shell{
+    height:72px;
+  }
+  .brand img{
+    width:132px;
+    max-height:46px;
+  }
+  .nav-menu{
+    top:72px;
+  }
+  .hero-section{
+    padding-top:60px;
+    padding-bottom:96px;
+  }
+  .hero-copy h1{
+    font-size:38px;
+    line-height:1.04;
+  }
+  .hero-actions a{
+    width:100%;
+  }
+  .hero-proof-row,
+  .coverage-grid,
+  .routes-secondary-grid{
+    grid-template-columns:1fr;
+  }
+  .tracking-card{
+    grid-template-columns:1fr;
+  }
+  .tracking-card h2{
+    font-size:30px;
+  }
+  .routes-feature-content{
+    padding:24px;
+  }
+  .routes-feature-content h3{
+    font-size:30px;
+  }
+  .service-content h3{
+    min-height:auto;
+  }
+}
+
+@media(max-width:430px){
+  .hero-copy h1{
+    font-size:34px;
+  }
+  .brand img{
+    width:122px;
+  }
+  .brand{
+    padding:6px 9px;
+  }
+  .hero-authority{
+    font-size:14px;
+  }
+  .routes-feature-image{
+    padding:14px;
+  }
+}
