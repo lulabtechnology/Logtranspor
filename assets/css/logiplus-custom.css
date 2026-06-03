@@ -223,3 +223,284 @@ a{text-decoration:none}
   .lp-route-card h3,.lp-service-card h3{font-size:26px}
   .lp-route-card--large img{aspect-ratio:4/3}
 }
+
+
+/* ==============================
+   V8.1 — Ajustes de marca, servicios, proceso y footer
+   ============================== */
+:root{
+  --lp-brand-blue:#006fe8;
+  --lp-brand-blue-2:#1287ff;
+  --lp-brand-navy:#061833;
+  --lp-brand-teal:#00a8c8;
+}
+
+/* Botones con color LogiPlus, no verde/turquesa de plantilla */
+.trucker__btn-style-1,
+.lp-brand-btn{
+  background:linear-gradient(135deg,var(--lp-brand-blue),var(--lp-brand-blue-2))!important;
+  color:#fff!important;
+  border:0!important;
+  box-shadow:0 18px 42px rgba(0,111,232,.28)!important;
+}
+.trucker__btn-style-1::before,
+.trucker__btn-style-1::after{
+  background:linear-gradient(135deg,var(--lp-brand-navy),var(--lp-brand-blue))!important;
+}
+.trucker__btn-style-1:hover,
+.lp-brand-btn:hover{
+  color:#fff!important;
+  transform:translateY(-3px);
+  box-shadow:0 24px 55px rgba(0,111,232,.36)!important;
+}
+.trucker__btn-style-2{
+  color:var(--lp-brand-navy)!important;
+  background:#fff!important;
+}
+.trucker__sub-titel{
+  color:var(--lp-brand-blue)!important;
+  background:linear-gradient(135deg,#eaf4ff,#f4faff)!important;
+}
+
+/* Servicios clave más visuales, con imagen y hover tipo template */
+.lp-services-section{
+  background:
+    radial-gradient(circle at 18% 12%,rgba(0,111,232,.08),transparent 28%),
+    linear-gradient(180deg,#f3f8ff 0%,#edf5ff 100%)!important;
+}
+.lp-services-grid--visual{
+  align-items:stretch;
+}
+.lp-service-card--visual{
+  position:relative;
+  overflow:hidden;
+  padding:0!important;
+  border:1px solid rgba(0,111,232,.16)!important;
+  background:#fff!important;
+}
+.lp-service-card--visual::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,rgba(0,111,232,.13),rgba(0,168,200,.08));
+  opacity:0;
+  transition:.35s ease;
+  pointer-events:none;
+  z-index:1;
+}
+.lp-service-card--visual:hover::before{
+  opacity:1;
+}
+.lp-service-card--visual:hover{
+  transform:translateY(-10px)!important;
+  border-color:rgba(0,111,232,.48)!important;
+}
+.lp-service-card__image{
+  position:relative;
+  height:215px;
+  overflow:hidden;
+}
+.lp-service-card__image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .65s ease, filter .35s ease;
+}
+.lp-service-card--visual:hover .lp-service-card__image img{
+  transform:scale(1.08);
+  filter:saturate(1.08) contrast(1.04);
+}
+.lp-service-card__image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(6,24,51,.03),rgba(6,24,51,.48));
+}
+.lp-service-card__badge{
+  position:absolute;
+  left:28px;
+  bottom:-34px;
+  z-index:3;
+  width:76px;
+  height:76px;
+  border-radius:22px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,var(--lp-brand-blue),var(--lp-brand-blue-2));
+  box-shadow:0 18px 42px rgba(0,111,232,.35);
+  border:4px solid #fff;
+}
+.lp-service-card__badge img{
+  width:34px;
+  height:34px;
+  object-fit:contain;
+  filter:brightness(0) invert(1);
+}
+.lp-service-card__body{
+  position:relative;
+  z-index:2;
+  padding:54px 32px 32px;
+}
+.lp-service-card__body h3{
+  margin:0 0 14px;
+  font-size:29px;
+  color:var(--lp-brand-navy);
+  line-height:1.1;
+}
+.lp-service-card__body p{
+  line-height:1.75;
+  margin-bottom:22px;
+}
+.lp-brand-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  min-height:48px;
+  padding:0 22px;
+  border-radius:999px;
+  font-weight:900;
+}
+.lp-service-card--visual:hover .lp-brand-btn{
+  background:linear-gradient(135deg,var(--lp-brand-navy),var(--lp-brand-blue))!important;
+}
+
+/* Cómo trabajamos: color de marca y un toque más visual sin tocar animaciones */
+.lp-process-section{
+  background:
+    radial-gradient(circle at 80% 20%,rgba(0,111,232,.08),transparent 30%),
+    linear-gradient(180deg,#eef6ff 0%,#f7fbff 100%)!important;
+}
+.lp-process-title .trucker__main-title span{
+  color:var(--lp-brand-blue);
+  position:relative;
+  display:inline-block;
+}
+.lp-process-title .trucker__main-title span::after{
+  content:"";
+  position:absolute;
+  left:10%;
+  right:10%;
+  bottom:-10px;
+  height:4px;
+  border-radius:99px;
+  background:linear-gradient(90deg,var(--lp-brand-blue),var(--lp-brand-teal));
+}
+.lp-process-item{
+  position:relative;
+  overflow:hidden;
+  border-color:rgba(0,111,232,.14)!important;
+}
+.lp-process-item::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,rgba(0,111,232,.10),rgba(0,168,200,.05));
+  opacity:0;
+  transition:.35s ease;
+}
+.lp-process-item:hover{
+  transform:translateY(-8px);
+  border-color:rgba(0,111,232,.36)!important;
+}
+.lp-process-item:hover::before{
+  opacity:1;
+}
+.lp-process-item > *{
+  position:relative;
+  z-index:1;
+}
+.lp-process-item span{
+  color:rgba(0,111,232,.20)!important;
+}
+.lp-process-icon{
+  width:64px;
+  height:64px;
+  border-radius:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#eaf4ff,#fff);
+  color:var(--lp-brand-blue);
+  font-size:26px;
+  margin-bottom:18px;
+  box-shadow:0 14px 34px rgba(0,111,232,.10);
+}
+.lp-process-item:hover .lp-process-icon{
+  background:linear-gradient(135deg,var(--lp-brand-blue),var(--lp-brand-blue-2));
+  color:#fff;
+}
+
+/* Footer más completo, sin backlink ni mención Lulab */
+.lp-footer{
+  background:
+    radial-gradient(circle at 85% 10%,rgba(0,111,232,.22),transparent 30%),
+    linear-gradient(135deg,#061833 0%,#08234e 100%)!important;
+}
+.lp-footer__grid--expanded{
+  grid-template-columns:1.35fr .75fr .75fr .9fr!important;
+}
+.lp-footer__logo{
+  box-shadow:0 18px 45px rgba(0,0,0,.18);
+}
+.lp-footer__mini-badges{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+.lp-footer__mini-badges span{
+  display:inline-flex;
+  padding:9px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+  color:#dbeaff;
+  font-size:13px;
+  font-weight:800;
+}
+.lp-footer a i{
+  width:20px;
+  color:#82c8ff;
+}
+.lp-footer__bottom{
+  color:#b8cdea;
+}
+.lp-footer__bottom span:last-child{
+  color:#7faad5;
+}
+
+/* Responsivo */
+@media (max-width:1199px){
+  .lp-footer__grid--expanded{
+    grid-template-columns:1fr 1fr!important;
+  }
+}
+@media (max-width:991px){
+  .lp-service-card__image{
+    height:250px;
+  }
+}
+@media (max-width:767px){
+  .lp-services-grid--visual{
+    grid-template-columns:1fr!important;
+  }
+  .lp-service-card__image{
+    height:220px;
+  }
+  .lp-service-card__body{
+    padding:52px 24px 28px;
+  }
+  .lp-service-card__body h3{
+    font-size:26px;
+    overflow-wrap:normal;
+    word-break:normal;
+  }
+  .lp-process-title .trucker__main-title span::after{
+    bottom:-6px;
+  }
+  .lp-footer__grid--expanded{
+    grid-template-columns:1fr!important;
+  }
+}
