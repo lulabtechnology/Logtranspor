@@ -550,154 +550,169 @@ a{text-decoration:none}
 }
 
 /* ==============================
-   V9.0 — Documento Maestro 13/07/2026
-   Copy, jerarquía, formularios, SEO y nuevas áreas de servicio.
-   Mantiene la base visual, clases Trucker y comportamiento existente.
+   V9.0 — Documento Maestro LogiPlus · implementación completa
    ============================== */
-
-body{font-family:"Inter",Arial,sans-serif}
-.lp-nav{gap:16px}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.lp-nav{gap:22px}
 .lp-nav a{font-size:14px;white-space:nowrap}
-.lp-brand img{width:165px}
-.lp-nav-cta{font-size:14px;padding:0 20px!important}
+.lp-nav-cta{font-size:14px}
+.lp-tracking__card{grid-template-columns:minmax(0,1fr) minmax(360px,.78fr)}
+.lp-tracking__card>.lp-form-note{grid-column:1/-1;border-top:1px solid var(--lp-line);padding-top:14px}
+.lp-form-note i{color:var(--lp-blue);margin-right:6px}
 
-.lp-section-lead{max-width:860px;margin:0 auto 30px;font-size:18px;line-height:1.8}
-.lp-disclaimer{padding:14px 16px;border-left:4px solid var(--lp-brand-blue);background:#f1f7ff;border-radius:12px;font-size:14px;color:#324969}
-.lp-honeypot{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important}
-.lp-form-status{grid-column:1/-1;margin:2px 0 0;font-size:14px;line-height:1.55;min-height:1.55em;color:#34506f}
-.lp-form-status.is-success{color:#137a43;font-weight:700}
-.lp-form-status.is-error{color:#b42318;font-weight:700}
-.lp-form-status.is-info{color:#245f9d;font-weight:700}
-.lp-field-pair{display:grid;grid-template-columns:1fr 118px;gap:10px}
-.lp-date-field{display:grid;gap:6px;font-size:12px;font-weight:800;color:var(--lp-navy);text-transform:uppercase;letter-spacing:.05em}
-.lp-date-field input{font-size:15px;text-transform:none;letter-spacing:normal}
-.lp-file-field{grid-column:1/-1;display:grid;gap:8px;background:#f7faff;border:1px dashed #a9c6e9;border-radius:16px;padding:15px 16px;color:var(--lp-navy);font-weight:800}
-.lp-file-field input[type="file"]{padding:10px;background:#fff;font-weight:500}
-.lp-file-field small{font-weight:500;color:var(--lp-text);line-height:1.5}
-.lp-consent-field{grid-column:1/-1;display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.5;color:var(--lp-navy)}
-.lp-consent-field input[type="checkbox"]{width:18px!important;height:18px!important;min-width:18px;margin-top:2px;padding:0;border-radius:4px}
-.lp-inline-form{position:relative;flex-wrap:wrap}
-.lp-inline-form .lp-form-status{flex:1 1 100%;min-height:0;margin:0 6px}
+.lp-value-points{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.lp-value-points>div{display:flex;gap:14px;align-items:flex-start;padding:22px;background:#fff;border:1px solid var(--lp-line);border-radius:20px;box-shadow:var(--lp-shadow-soft)}
+.lp-value-points i{display:flex;align-items:center;justify-content:center;flex:0 0 46px;width:46px;height:46px;border-radius:14px;background:#edf5ff;color:var(--lp-blue);font-size:20px}
+.lp-value-points span{line-height:1.55}
+.lp-value-points strong{display:block;color:var(--lp-navy);margin-bottom:4px}
 
-/* Soluciones integrales */
-.lp-integral-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:stretch}
-.lp-route-card--feature{grid-row:span 2;padding:0;overflow:hidden;display:flex;flex-direction:column}
-.lp-route-card--feature>img{width:100%;aspect-ratio:16/9;object-fit:cover}
-.lp-route-card--feature .lp-route-card__body{display:flex;flex-direction:column;align-items:flex-start;flex:1}
-.lp-route-card--feature .lp-route-card__body p{line-height:1.8}
-.lp-info-card{background:#fff;border:1px solid var(--lp-line);border-radius:28px;padding:30px;box-shadow:var(--lp-shadow-soft)}
-.lp-info-card__icon,.lp-operation-card__icon{width:62px;height:62px;border-radius:20px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#eaf4ff,#fff);color:var(--lp-brand-blue);font-size:26px;margin-bottom:18px;box-shadow:0 14px 34px rgba(0,111,232,.10)}
-.lp-info-card h3{font-size:29px;color:var(--lp-navy);margin-bottom:12px;line-height:1.15}
-.lp-info-card p{margin:0;line-height:1.8}
+.lp-service-card__icon i{font-size:28px;color:var(--lp-brand-blue)}
+.lp-service-card__body>a{display:inline-flex;align-items:center;gap:8px;color:var(--lp-brand-blue);font-weight:900}
 
-/* Empresas */
-.lp-business-section{padding:120px 0;background:linear-gradient(180deg,#f7fbff 0%,#eef6ff 100%)}
-.lp-business-card{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:start;background:#fff;border:1px solid var(--lp-line);border-radius:34px;padding:38px;box-shadow:var(--lp-shadow)}
-.lp-business-card__intro p{line-height:1.8}
-.lp-highlight-phrase{margin-top:24px!important;padding:20px 22px;border-radius:20px;background:linear-gradient(135deg,var(--lp-brand-navy),#0a3370);color:#fff!important;font-weight:800;font-size:18px;box-shadow:0 16px 36px rgba(6,24,51,.18)}
-.lp-capability-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.lp-capability-grid div{display:flex;gap:12px;align-items:center;min-height:82px;padding:16px;border:1px solid var(--lp-line);border-radius:18px;background:#fafdff;color:var(--lp-navy);font-weight:800}
-.lp-capability-grid i{width:38px;height:38px;min-width:38px;border-radius:12px;background:#eaf4ff;color:var(--lp-brand-blue);display:flex;align-items:center;justify-content:center}
+.lp-insurance-section{background:#fff}
+.lp-split-card--insurance,.lp-split-card--locker{align-items:start}
+.lp-split-card__content{min-width:0}
+.lp-split-card__form{background:linear-gradient(180deg,#f7fbff,#eef6ff);border:1px solid rgba(0,111,232,.12);border-radius:26px;padding:28px;min-width:0}
+.lp-form-heading{margin-bottom:22px}
+.lp-form-heading>span{display:inline-block;color:var(--lp-blue);font-size:12px;letter-spacing:.08em;font-weight:900;text-transform:uppercase;margin-bottom:8px}
+.lp-form-heading h3{color:var(--lp-navy);font-size:30px;line-height:1.15;margin:0 0 8px}
+.lp-form-heading p{margin:0;line-height:1.6}
+.lp-visual-card{margin-top:24px;border-radius:26px;overflow:hidden;box-shadow:var(--lp-shadow-soft)}
+.lp-visual-card img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.lp-check-grid span{display:flex;align-items:flex-start;gap:10px;padding:14px 16px;background:#f7fbff;border:1px solid var(--lp-line);border-radius:16px;color:var(--lp-navy);font-weight:700;line-height:1.45}
+.lp-check-grid span i{margin-top:3px}
+.lp-inline-fields{display:grid;grid-template-columns:1fr 110px;gap:10px}
+.lp-file-field{grid-column:1/-1;display:flex;flex-direction:column;gap:10px;padding:15px 16px;border:1px dashed #9fc2ea;border-radius:16px;background:#fff;color:var(--lp-navy);font-weight:800;cursor:pointer}
+.lp-file-field input{padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important}
+.lp-file-field span i{color:var(--lp-blue);margin-right:6px}
+.lp-form-note--wide{background:#fff;border:1px solid var(--lp-line);padding:12px 14px;border-radius:14px}
+.lp-form-confirmation{display:none;margin-top:16px;padding:14px 16px;border-radius:16px;background:#eafbf1;border:1px solid #b9ebcb;color:#17653a;font-weight:700;line-height:1.5}
+.lp-form-confirmation.is-visible{display:block}
+.lp-consent{grid-column:1/-1;display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border-radius:14px;background:#fff;border:1px solid var(--lp-line);font-size:14px;line-height:1.5;color:var(--lp-text)}
+.lp-consent input{width:18px!important;height:18px!important;margin-top:2px;padding:0!important;flex:0 0 18px}
+.lp-consent a{color:var(--lp-blue);font-weight:800}
 
-/* Procurement y aduanas */
-.lp-specialized-section{padding:120px 0}
-.lp-specialized-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
-.lp-specialized-card{border:1px solid var(--lp-line);border-radius:32px;padding:34px;background:#fff;box-shadow:var(--lp-shadow-soft)}
-.lp-specialized-card:first-child{background:linear-gradient(150deg,#f5faff 0%,#fff 60%)}
-.lp-specialized-card h2{font-size:34px;line-height:1.12;color:var(--lp-navy);margin-bottom:16px}
-.lp-specialized-card p{line-height:1.8;margin-bottom:22px}
-.lp-bullet-list--compact{gap:9px;margin-bottom:18px}
-.lp-bullet-list--compact li{font-size:15px}
+.lp-integral-section,.lp-business-section,.lp-procurement-section,.lp-customs-section,.lp-china-section,.lp-warehouse-section,.lp-local-section,.lp-geography-section,.lp-community-section{padding:120px 0}
+.lp-integral-section,.lp-customs-section,.lp-warehouse-section,.lp-community-section{background:#f6f9fd}
+.lp-section-head{max-width:850px;margin:0 auto 34px;text-align:center}
+.lp-section-head p{font-size:18px;line-height:1.8;margin:0}
+.lp-feature-grid{display:grid;gap:22px}
+.lp-feature-grid--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.lp-feature-card{background:#fff;border:1px solid var(--lp-line);border-radius:26px;padding:30px;box-shadow:var(--lp-shadow-soft)}
+.lp-feature-card>i{display:flex;align-items:center;justify-content:center;width:62px;height:62px;border-radius:18px;background:#eaf4ff;color:var(--lp-blue);font-size:26px;margin-bottom:20px}
+.lp-feature-card h3{font-size:25px;color:var(--lp-navy);line-height:1.2;margin-bottom:12px}
+.lp-feature-card p{line-height:1.75;margin:0}
 
-/* China */
-.lp-china-section{padding:110px 0;background:var(--lp-light)}
-.lp-china-card{display:grid;grid-template-columns:260px 1fr;gap:42px;align-items:center;background:linear-gradient(135deg,#071b3d,#0c3676);border-radius:36px;padding:44px;color:#dbeaff;box-shadow:var(--lp-shadow)}
-.lp-china-card__icon{width:220px;height:220px;border-radius:32px;background:rgba(255,255,255,.96);display:flex;align-items:center;justify-content:center;padding:44px}
-.lp-china-card__icon img{width:100%;height:100%;object-fit:contain}
-.lp-china-card__content h2{color:#fff}
-.lp-china-card__content p{font-size:18px;line-height:1.8;color:#dbeaff}
-.lp-chip-row{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 26px}
-.lp-chip-row span{padding:9px 13px;border-radius:999px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.16);font-size:13px;font-weight:800;color:#fff}
+.lp-editorial-grid{display:grid;grid-template-columns:minmax(0,.96fr) minmax(0,1.04fr);gap:58px;align-items:center}
+.lp-editorial-grid--reverse .lp-editorial-image{order:2}
+.lp-editorial-grid--reverse .lp-editorial-copy{order:1}
+.lp-editorial-image{position:relative}
+.lp-editorial-image:before{content:"";position:absolute;inset:18px -18px -18px 18px;border-radius:30px;background:linear-gradient(135deg,rgba(0,111,232,.16),rgba(0,168,200,.06));z-index:0}
+.lp-editorial-image img{position:relative;z-index:1;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:30px;box-shadow:var(--lp-shadow)}
+.lp-editorial-copy p{font-size:17px;line-height:1.8;margin-bottom:16px}
+.lp-pill-grid{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0}
+.lp-pill-grid span,.lp-route-tags span{display:inline-flex;padding:9px 13px;border-radius:999px;background:#eaf4ff;color:var(--lp-navy);border:1px solid #cfe4fb;font-weight:800;font-size:13px}
+.lp-emphasis{padding:18px 20px;border-left:4px solid var(--lp-blue);background:#eff6ff;color:var(--lp-navy);font-weight:800;line-height:1.6;border-radius:0 16px 16px 0;margin-top:24px}
+.lp-check-list{display:grid;gap:12px;margin:24px 0}
+.lp-check-list--2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.lp-check-list span{display:flex;gap:10px;align-items:flex-start;color:var(--lp-navy);font-weight:700;line-height:1.5}
+.lp-check-list i{color:var(--lp-blue);margin-top:4px}
+.lp-route-tags{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 28px}
 
-/* Almacenaje y transporte local */
-.lp-operations-section{padding:120px 0}
-.lp-operations-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
-.lp-operation-card{background:#fff;border:1px solid var(--lp-line);border-radius:30px;padding:32px;box-shadow:var(--lp-shadow-soft)}
-.lp-operation-card h2{font-size:32px;line-height:1.15;color:var(--lp-navy);margin-bottom:14px}
-.lp-operation-card>p{line-height:1.8}
-.lp-text-link{font-weight:900;color:var(--lp-brand-blue);display:inline-flex;gap:8px;align-items:center}
+.lp-route-card__content{padding:6px 2px 0}
+.lp-route-card--large .lp-route-card__content{padding:28px}
+.lp-route-card:not(.lp-route-card--large)>img{width:100%;height:245px;object-fit:cover;border-radius:22px;margin-bottom:24px;background:#f1f6fc}
+.lp-route-card__content>a{display:inline-flex;align-items:center;gap:8px;color:var(--lp-blue);font-weight:900}
 
-/* Experiencia geográfica */
-.lp-geography-section{padding:0 0 120px}
-.lp-geography-card{position:relative;overflow:hidden;border-radius:36px;padding:44px;background:radial-gradient(circle at 85% 15%,rgba(18,135,255,.34),transparent 32%),linear-gradient(135deg,#061833,#0b2f67);box-shadow:var(--lp-shadow)}
-.lp-geography-card h2{font-size:clamp(34px,4vw,50px);line-height:1.08;color:#fff;max-width:850px}
-.lp-geography-card p{color:#dbeaff;line-height:1.8;max-width:940px;font-size:17px}
-.lp-route-chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
-.lp-route-chips span{padding:11px 15px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);border-radius:999px;color:#fff;font-weight:800}
+.lp-section-band{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center;background:linear-gradient(135deg,#061833,#0b326d);border-radius:34px;padding:42px;color:#dbe9ff;box-shadow:var(--lp-shadow)}
+.lp-section-band h2{font-size:clamp(32px,4vw,48px);line-height:1.08;color:#fff;margin-bottom:14px}
+.lp-section-band p{line-height:1.8;margin:0}
+.lp-section-band .trucker__sub-titel{background:rgba(255,255,255,.1)!important;color:#a6d5ff!important}
+.lp-band-points{display:grid;gap:12px}
+.lp-band-points span{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);font-weight:700}
+.lp-band-points i{color:#74c2ff;margin-top:3px}
+.lp-section-band>a{grid-column:1/-1;justify-self:start}
 
-/* Comunidad: el mosaico se activa solo cuando el cliente suministre fotos reales */
-.lp-community-section{padding:120px 0;background:linear-gradient(180deg,#fff 0%,#f4f9ff 100%)}
-.lp-community-card{display:grid;grid-template-columns:1fr;gap:40px;align-items:start}
-.lp-community-copy{max-width:1000px}
-.lp-community-copy p{line-height:1.85}
-.lp-community-copy blockquote{margin:26px 0;padding:22px 24px;border-left:5px solid var(--lp-brand-blue);border-radius:0 18px 18px 0;background:#eaf4ff;color:var(--lp-navy);font-size:21px;font-weight:800;line-height:1.5}
-.lp-community-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:24px 0}
-.lp-community-metrics span{display:flex;flex-direction:column;gap:4px;padding:18px;border:1px solid var(--lp-line);border-radius:18px;background:#fff;box-shadow:var(--lp-shadow-soft)}
-.lp-community-metrics strong{font-size:20px;color:var(--lp-navy)}
-.lp-chip-row--community span{background:#eaf4ff;border-color:#d8e8fb;color:var(--lp-navy)}
-.lp-impact-details{margin-top:26px;border:1px solid var(--lp-line);border-radius:20px;background:#fff;overflow:hidden;box-shadow:var(--lp-shadow-soft)}
-.lp-impact-details summary{cursor:pointer;padding:18px 22px;font-weight:900;color:var(--lp-brand-blue);list-style:none}
-.lp-impact-details summary::-webkit-details-marker{display:none}
-.lp-impact-timeline{padding:0 22px 20px}
-.lp-impact-timeline p{position:relative;padding-left:20px;margin:0 0 14px;border-left:2px solid #dbeaff}
-.lp-impact-timeline p:last-child{margin-bottom:0}
-.lp-community-gallery-shell{display:none}
+.lp-community-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+.lp-community-copy p{line-height:1.8;font-size:16.5px}
+.lp-community-copy blockquote{margin:24px 0;padding:20px 22px;border-left:4px solid var(--lp-blue);background:#fff;border-radius:0 18px 18px 0;color:var(--lp-navy);font-weight:800;font-size:19px;line-height:1.55;box-shadow:var(--lp-shadow-soft)}
+.lp-community-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:24px 0}
+.lp-community-stats span{background:#fff;border:1px solid var(--lp-line);border-radius:16px;padding:14px;font-size:13px;line-height:1.45}
+.lp-community-stats strong{display:block;color:var(--lp-blue);font-size:19px;margin-bottom:4px}
+.lp-community-mosaic{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.lp-community-mosaic img{width:100%;height:190px;object-fit:cover;border-radius:20px;box-shadow:var(--lp-shadow-soft)}
+.lp-community-mosaic img:first-child{grid-column:1/-1;height:280px}
 
-/* Por qué elegirnos sin números artificiales */
-.lp-why-grid--benefits .lp-why-item{display:flex;flex-direction:column;align-items:flex-start;text-align:left}
-.lp-why-grid--benefits .lp-why-item i{font-size:27px;color:#8ac7ff;margin-bottom:15px}
-.lp-why-grid--benefits .lp-why-item strong{font-size:20px;line-height:1.25;margin-bottom:8px;color:#fff}
-.lp-why-grid--benefits .lp-why-item span{font-size:14px;font-weight:600;line-height:1.6;color:#dbe9ff}
+.lp-why-grid--icons .lp-why-item{text-align:left}
+.lp-why-grid--icons .lp-why-item>i{display:flex;align-items:center;justify-content:center;width:50px;height:50px;border-radius:15px;background:rgba(255,255,255,.12);color:#9fd4ff;font-size:22px;margin:0 0 16px}
+.lp-why-grid--icons .lp-why-item strong{font-size:18px;line-height:1.3;margin-bottom:8px}
+.lp-why-grid--icons .lp-why-item span{font-size:14px;font-weight:600}
+.lp-proof-grid--attributes .lp-proof-item h3{font-size:22px;color:var(--lp-navy);line-height:1.25;margin-bottom:10px}
+.lp-proof-grid--attributes .lp-proof-item p{font-size:16px;color:var(--lp-text)}
+.lp-faq-copy{position:sticky;top:120px}
+.lp-faq-copy .trucker__btn-style-1{margin-top:12px}
+.lp-final-cta__content>span{display:inline-block;color:#a6d5ff;font-size:13px;font-weight:900;letter-spacing:.1em;margin-bottom:14px}
+.lp-final-cta__content p{font-size:18px;line-height:1.7;margin-bottom:26px}
+.lp-contact-card__info p{font-size:17px;line-height:1.8}
+.lp-footer p+p{margin-top:12px}
 
-/* Prueba social: descriptores, no testimonios inventados */
-.lp-proof-item h3{font-size:23px;color:var(--lp-navy);margin-bottom:10px;line-height:1.2}
-.lp-proof-item p{font-size:16px}
+/* Páginas legales y compromiso */
+.lp-internal-body{background:#f6f9fd}
+.lp-internal-hero{padding:92px 0;background:linear-gradient(135deg,#061833,#0b326d);color:#fff}
+.lp-internal-hero h1{font-size:clamp(38px,5vw,64px);line-height:1.05;color:#fff;margin:12px 0}
+.lp-internal-hero p{max-width:780px;color:#dbe9ff;font-size:18px;line-height:1.7;margin:0}
+.lp-internal-content{padding:80px 0}
+.lp-legal-card{max-width:980px;margin:0 auto;background:#fff;border:1px solid var(--lp-line);border-radius:28px;padding:42px;box-shadow:var(--lp-shadow-soft)}
+.lp-legal-card h2{color:var(--lp-navy);font-size:28px;margin:28px 0 12px}
+.lp-legal-card h2:first-child{margin-top:0}
+.lp-legal-card h3{color:var(--lp-navy);font-size:20px;margin:20px 0 10px}
+.lp-legal-card p,.lp-legal-card li{line-height:1.8}
+.lp-legal-card a{color:var(--lp-blue);font-weight:800}
+.lp-back-home{display:inline-flex;align-items:center;gap:8px;color:#fff;font-weight:800}
+.lp-timeline{display:grid;gap:16px;margin-top:30px}
+.lp-timeline-item{display:grid;grid-template-columns:150px 1fr;gap:24px;background:#fff;border:1px solid var(--lp-line);border-radius:20px;padding:22px;box-shadow:var(--lp-shadow-soft)}
+.lp-timeline-item strong{color:var(--lp-blue);font-size:15px}
+.lp-timeline-item h3{color:var(--lp-navy);font-size:21px;margin:0 0 6px}
+.lp-timeline-item p{margin:0;line-height:1.7}
 
-/* Footer legal: visible pero no enlazado hasta recibir textos legales aprobados */
-.lp-footer__secondary{margin-top:12px!important;color:#9fb7d8}
-.lp-legal-links{display:grid;gap:8px;margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12)}
-.lp-legal-links span{display:block;color:#8fa9cc;font-size:13px;cursor:not-allowed}
-
-/* Carga y rendimiento */
-.lp-value-grid__media img,.lp-split-card__media img,.lp-service-card__image img,.lp-route-card--feature>img{background:#eaf2fb}
-
-@media (max-width:1399px){
-  .lp-nav{gap:12px}
-  .lp-nav a{font-size:13px}
-  .lp-brand img{width:150px}
-  .lp-nav-cta{padding:0 16px!important}
-}
 @media (max-width:1199px){
-  .lp-integral-grid,.lp-business-card{grid-template-columns:1fr}
-  .lp-route-card--feature{grid-row:auto}
-  .lp-capability-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .lp-nav{gap:14px}
+  .lp-nav a{font-size:13px}
+  .lp-tracking__card{grid-template-columns:1fr}
+  .lp-editorial-grid,.lp-community-grid{grid-template-columns:1fr}
+  .lp-editorial-grid--reverse .lp-editorial-image,.lp-editorial-grid--reverse .lp-editorial-copy{order:initial}
+  .lp-editorial-image{max-width:850px;margin:0 auto}
+  .lp-section-band{grid-template-columns:1fr}
+  .lp-section-band>a{grid-column:1}
 }
 @media (max-width:991px){
-  .lp-specialized-grid,.lp-operations-grid{grid-template-columns:1fr}
-  .lp-china-card{grid-template-columns:1fr}
-  .lp-china-card__icon{width:180px;height:180px}
-  .lp-community-metrics{grid-template-columns:1fr}
-  .lp-capability-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .lp-nav a{font-size:15px}
+  .lp-integral-section,.lp-business-section,.lp-procurement-section,.lp-customs-section,.lp-china-section,.lp-warehouse-section,.lp-local-section,.lp-geography-section,.lp-community-section{padding:90px 0}
+  .lp-feature-grid--3{grid-template-columns:1fr}
+  .lp-check-list--2{grid-template-columns:1fr}
+  .lp-community-stats{grid-template-columns:1fr 1fr 1fr}
+  .lp-faq-copy{position:static}
+  .lp-why-grid--icons{grid-template-columns:1fr 1fr}
 }
 @media (max-width:767px){
-  .lp-business-section,.lp-specialized-section,.lp-china-section,.lp-operations-section,.lp-community-section{padding:80px 0}
-  .lp-geography-section{padding-bottom:80px}
-  .lp-business-card,.lp-specialized-card,.lp-operation-card,.lp-china-card,.lp-geography-card{padding:24px}
-  .lp-capability-grid{grid-template-columns:1fr}
-  .lp-field-pair{grid-template-columns:1fr}
-  .lp-china-card__icon{width:140px;height:140px;padding:28px}
-  .lp-specialized-card h2,.lp-operation-card h2{font-size:28px}
-  .lp-community-copy blockquote{font-size:18px}
-  .lp-route-chips span,.lp-chip-row span{font-size:12px}
+  .lp-integral-section,.lp-business-section,.lp-procurement-section,.lp-customs-section,.lp-china-section,.lp-warehouse-section,.lp-local-section,.lp-geography-section,.lp-community-section{padding:76px 0}
+  .lp-value-points{grid-template-columns:1fr}
+  .lp-split-card__form{padding:20px}
+  .lp-inline-fields{grid-template-columns:1fr}
+  .lp-section-band{padding:28px 22px;border-radius:26px}
+  .lp-community-stats{grid-template-columns:1fr}
+  .lp-community-mosaic{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;gap:12px}
+  .lp-community-mosaic img,.lp-community-mosaic img:first-child{flex:0 0 82%;height:260px;grid-column:auto;scroll-snap-align:start}
+  .lp-why-grid--icons{grid-template-columns:1fr}
+  .lp-editorial-image:before{inset:10px -8px -8px 10px}
+  .lp-legal-card{padding:26px 20px;border-radius:22px}
+  .lp-timeline-item{grid-template-columns:1fr;gap:8px}
+  .lp-internal-hero{padding:70px 0}
+  .lp-internal-content{padding:58px 0 100px}
 }
+@media (max-width:575px){
+  .lp-editorial-grid{gap:34px}
+  .lp-editorial-copy p{font-size:16px}
+  .lp-community-mosaic img,.lp-community-mosaic img:first-child{flex-basis:88%;height:230px}
+  .lp-route-card--large .lp-route-card__content{padding:22px}
+}
+.lp-hp{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important}

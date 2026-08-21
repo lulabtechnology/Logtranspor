@@ -1,8 +1,8 @@
 (function(){
+  'use strict';
+
   const WHATSAPP='50760903814';
   const EMAIL='info@logipluspty.com';
-  const MIN_FORM_TIME=900;
-  const SUBMIT_COOLDOWN=8000;
 
   function setBackgrounds(){
     document.querySelectorAll('[data-background]').forEach(el=>{
@@ -13,15 +13,16 @@
 
   function preloader(){
     const pre=document.getElementById('trucker__preloader');
-    window.addEventListener('load',()=>{
+    const removePreloader=()=>{
+      if(!pre) return;
       setTimeout(()=>{
-        if(pre){
-          pre.style.opacity='0';
-          pre.style.pointerEvents='none';
-          setTimeout(()=>pre.remove(),350);
-        }
-      },500);
-    });
+        pre.style.opacity='0';
+        pre.style.pointerEvents='none';
+        setTimeout(()=>pre.remove(),350);
+      },350);
+    };
+    if(document.readyState==='complete') removePreloader();
+    else window.addEventListener('load',removePreloader,{once:true});
   }
 
   function wowInit(){ if(window.WOW){ new WOW().init(); } }
@@ -38,11 +39,11 @@
       nav.classList.remove('is-open');
       btn.setAttribute('aria-expanded','false');
     }));
-    document.addEventListener('keydown',event=>{
-      if(event.key==='Escape'){
-        nav.classList.remove('is-open');
-        btn.setAttribute('aria-expanded','false');
-      }
+    document.addEventListener('click',e=>{
+      if(!nav.classList.contains('is-open')) return;
+      if(nav.contains(e.target) || btn.contains(e.target)) return;
+      nav.classList.remove('is-open');
+      btn.setAttribute('aria-expanded','false');
     });
   }
 
@@ -58,32 +59,15 @@
     new Swiper('.logiplus-hero-slider',{
       loop:true,
       effect:'fade',
-      speed:1000,
-      autoplay:{delay:5500,disableOnInteraction:false},
-      navigation:{nextEl:'.lp-hero-next',prevEl:'.lp-hero-prev'}
+      speed:900,
+      autoplay:{delay:6500,disableOnInteraction:false},
+      navigation:{nextEl:'.lp-hero-next',prevEl:'.lp-hero-prev'},
+      a11y:{enabled:true}
     });
   }
 
   function parallax(){
-    if(window.jarallax){
-      jarallax(document.querySelectorAll('.jarallax'),{speed:0.35});
-    }
-  }
-
-  function odometers(){
-    const items=document.querySelectorAll('.odometer');
-    if(!items.length || !('IntersectionObserver' in window)) return;
-    const observer=new IntersectionObserver(entries=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          const el=entry.target;
-          const target=el.getAttribute('data-count') || '0';
-          setTimeout(()=>{ el.innerHTML=target; },180);
-          observer.unobserve(el);
-        }
-      });
-    },{threshold:.5});
-    items.forEach(el=>observer.observe(el));
+    if(window.jarallax){ jarallax(document.querySelectorAll('.jarallax'),{speed:0.35}); }
   }
 
   function year(){
@@ -95,44 +79,30 @@
     const scrollPath=document.querySelector('.scroll-up');
     if(!scrollPath) return;
     const path=scrollPath.querySelector('path');
-    if(path && typeof path.getTotalLength==='function'){
-      const pathLength=path.getTotalLength();
-      path.style.transition=path.style.WebkitTransition='none';
-      path.style.strokeDasharray=pathLength+' '+pathLength;
-      path.style.strokeDashoffset=pathLength;
-      path.getBoundingClientRect();
-      path.style.transition=path.style.WebkitTransition='stroke-dashoffset 10ms linear';
-      const update=()=>{
-        const scroll=window.scrollY;
-        const height=Math.max(1,document.documentElement.scrollHeight-window.innerHeight);
-        const progress=pathLength-(scroll*pathLength/height);
-        path.style.strokeDashoffset=progress;
-        scrollPath.classList.toggle('active',scroll>120);
-      };
-      update();
-      window.addEventListener('scroll',update,{passive:true});
-    }
-    const goTop=()=>window.scrollTo({top:0,behavior:'smooth'});
-    scrollPath.addEventListener('click',goTop);
-    scrollPath.addEventListener('keydown',event=>{
-      if(event.key==='Enter' || event.key===' '){ event.preventDefault(); goTop(); }
-    });
+    if(!path || typeof path.getTotalLength!=='function') return;
+    const pathLength=path.getTotalLength();
+    path.style.transition=path.style.WebkitTransition='none';
+    path.style.strokeDasharray=pathLength+' '+pathLength;
+    path.style.strokeDashoffset=pathLength;
+    path.getBoundingClientRect();
+    path.style.transition=path.style.WebkitTransition='stroke-dashoffset 10ms linear';
+    const update=()=>{
+      const scroll=window.scrollY;
+      const height=Math.max(1,document.documentElement.scrollHeight-window.innerHeight);
+      path.style.strokeDashoffset=pathLength-(scroll*pathLength/height);
+      scrollPath.classList.toggle('active',scroll>120);
+    };
+    update();
+    window.addEventListener('scroll',update,{passive:true});
+    scrollPath.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
   }
 
   function openWhatsApp(message){
     window.open('https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(message),'_blank','noopener');
   }
 
-  function status(form,message,type='info'){
-    const el=form.querySelector('[data-form-status]');
-    if(!el) return;
-    el.textContent=message;
-    el.classList.remove('is-success','is-error','is-info');
-    el.classList.add('is-'+type);
-  }
-
   function setSuccess(inputs){
-    inputs.filter(i=>!i.classList.contains('lp-honeypot')).forEach(i=>i.classList.add('form-success'));
+    inputs.forEach(i=>i.classList.add('form-success'));
     setTimeout(()=>inputs.forEach(i=>i.classList.remove('form-success')),1500);
   }
 
@@ -140,9 +110,8 @@
     const fd=new FormData(form);
     const out=[];
     fd.forEach((value,key)=>{
-      if(key==='website') return;
       if(value instanceof File){
-        if(value.name){ out.push(key+': '+value.name+' (adjuntar manualmente en WhatsApp)'); }
+        if(value.name) out.push(key+': '+value.name+' (adjuntar manualmente en WhatsApp)');
         return;
       }
       const clean=String(value).trim();
@@ -151,64 +120,71 @@
     return out.join('\n');
   }
 
-  function isSpam(form){
-    const honeypot=form.querySelector('.lp-honeypot');
-    if(honeypot && honeypot.value.trim()) return true;
-    const started=Number(form.dataset.startedAt || Date.now());
-    return Date.now()-started<MIN_FORM_TIME;
-  }
-
-  function isCoolingDown(form){
-    const last=Number(form.dataset.lastSubmitAt || 0);
-    if(last && Date.now()-last<SUBMIT_COOLDOWN) return true;
-    form.dataset.lastSubmitAt=String(Date.now());
-    return false;
-  }
-
-  function prepareForms(){
-    document.querySelectorAll('.lp-protected-form').forEach(form=>{
-      form.dataset.startedAt=String(Date.now());
-    });
-  }
-
-  function bindTracking(){
-    const form=document.getElementById('trackingForm');
-    if(!form) return;
-    form.addEventListener('submit',event=>{
-      event.preventDefault();
-      if(isSpam(form)){ status(form,'No pudimos procesar la solicitud. Intenta nuevamente.','error'); return; }
-      if(isCoolingDown(form)){ status(form,'La consulta ya fue preparada. Revisa la ventana de WhatsApp.','info'); return; }
-      const input=document.getElementById('trackingNumber');
-      const code=input ? input.value.trim() : '';
-      if(!code) return;
-      setSuccess([input]);
-      status(form,'Abrimos WhatsApp con tu número de tracking para que nuestro equipo consulte el estado del paquete.','success');
-      openWhatsApp('Hola LogiPlus, quiero consultar el estado de este paquete.\n\nTracking: '+code+'\n\nQuedo atento(a) al seguimiento de mi envío.');
-    });
-  }
-
-  function bindLeadForm(id,intro,successMessage){
-    const form=document.getElementById(id);
-    if(!form) return;
-    form.addEventListener('submit',event=>{
-      event.preventDefault();
-      if(isSpam(form)){ status(form,'No pudimos procesar la solicitud. Intenta nuevamente.','error'); return; }
-      if(isCoolingDown(form)){ status(form,'La solicitud ya fue preparada. Revisa la ventana de WhatsApp.','info'); return; }
-      const inputs=[...form.querySelectorAll('input, select, textarea')];
-      setSuccess(inputs);
-      const details=serialize(form);
-      const msg=intro+'\n\n'+details+'\n\nCorreo de referencia: '+EMAIL;
-      status(form,successMessage,'success');
-      openWhatsApp(msg);
-    });
+  function showConfirmation(form){
+    const box=form.parentElement ? form.parentElement.querySelector('.lp-form-confirmation') : null;
+    if(!box) return;
+    box.classList.add('is-visible');
+    setTimeout(()=>box.classList.remove('is-visible'),8000);
   }
 
   function bindForms(){
-    prepareForms();
-    bindTracking();
-    bindLeadForm('insuranceForm','Hola LogiPlus, quiero solicitar una cotización de seguro de carga.','Abrimos WhatsApp con tu solicitud preparada. Envíala para que nuestro equipo pueda revisarla y continuar con la cotización.');
-    bindLeadForm('lockerForm','Hola LogiPlus, quiero solicitar mi casillero en Miami.','Abrimos WhatsApp con tu solicitud preparada. Envíala para continuar con la asignación de tu código de cliente e instrucciones.');
-    bindLeadForm('contactForm','Hola LogiPlus, quiero conversar sobre una operación logística.','Abrimos WhatsApp con tu solicitud preparada. Envíala para que nuestro equipo pueda orientarte.');
+    const tracking=document.getElementById('trackingForm');
+    if(tracking){
+      tracking.addEventListener('submit',e=>{
+        e.preventDefault();
+        const hp=tracking.querySelector('.lp-hp input');
+        if(hp && hp.value.trim()) return;
+        const input=document.getElementById('trackingNumber');
+        const code=input ? input.value.trim() : '';
+        if(!code) return;
+        setSuccess([input]);
+        openWhatsApp('Hola LogiPlus, quiero consultar el estado de este paquete.\n\nTracking: '+code+'\n\nQuedo atento(a) a la información disponible del envío.');
+      });
+    }
+
+    [
+      ['insuranceForm','Hola LogiPlus, quiero cotizar un seguro de carga.'],
+      ['lockerForm','Hola LogiPlus, quiero abrir mi casillero en Miami.'],
+      ['contactForm','Hola LogiPlus, quiero solicitar asesoría logística.']
+    ].forEach(([id,intro])=>{
+      const form=document.getElementById(id);
+      if(!form) return;
+      form.addEventListener('submit',e=>{
+        e.preventDefault();
+        const hp=form.querySelector('.lp-hp input');
+        if(hp && hp.value.trim()) return;
+        if(!form.checkValidity()){
+          form.reportValidity();
+          return;
+        }
+        const inputs=[...form.querySelectorAll('input,select,textarea')];
+        setSuccess(inputs);
+        showConfirmation(form);
+        const body=serialize(form);
+        const msg=intro+'\n\n'+body+'\n\nCorreo de referencia: '+EMAIL;
+        openWhatsApp(msg);
+      });
+    });
+  }
+
+  function bindServiceSelectors(){
+    const select=document.getElementById('serviceInterest');
+    document.querySelectorAll('.lp-service-select[data-service]').forEach(link=>{
+      link.addEventListener('click',()=>{
+        if(!select) return;
+        const service=link.getAttribute('data-service');
+        const option=[...select.options].find(opt=>opt.text.trim()===service);
+        if(option) select.value=option.value || option.text;
+      });
+    });
+  }
+
+  function faqAccordion(){
+    const details=[...document.querySelectorAll('.lp-faq-items details')];
+    details.forEach(item=>item.addEventListener('toggle',()=>{
+      if(!item.open) return;
+      details.forEach(other=>{ if(other!==item) other.open=false; });
+    }));
   }
 
   setBackgrounds();
@@ -218,8 +194,9 @@
   stickyHeader();
   heroSlider();
   parallax();
-  odometers();
   year();
   scrollTop();
   bindForms();
+  bindServiceSelectors();
+  faqAccordion();
 })();
