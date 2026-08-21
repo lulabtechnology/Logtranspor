@@ -59,7 +59,11 @@
     new Swiper('.logiplus-hero-slider',{
       loop:true,
       effect:'fade',
+      fadeEffect:{crossFade:true},
       speed:900,
+      autoHeight:false,
+      observer:true,
+      observeParents:true,
       autoplay:{delay:6500,disableOnInteraction:false},
       navigation:{nextEl:'.lp-hero-next',prevEl:'.lp-hero-prev'},
       a11y:{enabled:true}
